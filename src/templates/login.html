@@ -1,0 +1,89 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+
+    {% if user_code %}
+    <ol>
+      <li>To sign in, type <b>{{ user_code }}</b> into
+        <a href='{{ auth_uri }}' target=_blank>{{ auth_uri }}</a>
+        to authenticate.
+      </li>
+      <li>And then <a href="{{ url_for('auth_response') }}">proceed</a>.</li>
+    </ol>
+    {% else %}
+    <ul><li><a href='{{ auth_uri }}'>Sign In</a></li></ul>
+    {% endif %}
+
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login Page</title>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             background-color: #f4f4f4;
+             color: #333;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 100vh;
+         }
+         .container {
+             max-width: 600px;
+             padding: 20px;
+             background-color: #fff;
+             border-radius: 5px;
+             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         }
+         h1 {
+             color: #007bff;
+             text-align: center;
+             margin-bottom: 20px;
+         }
+         .signin-button {
+             display: block;
+             width: 100%;
+             padding: 10px 0;
+             background-color: #007bff;
+             color: #fff;
+             border: none;
+             border-radius: 5px;
+             text-align: center;
+             text-decoration: none;
+             transition: background-color 0.3s ease;
+         }
+         .signin-button:hover {
+             background-color: #0056b3;
+         }
+     </style>
+ </head>
+ <body>
+     <div class="container">
+         <h1>Welcome</h1>
+ 
+         {% if user_code %}
+         <p>To sign in, type <b>{{ user_code }}</b> into
+             <a href='{{ auth_uri }}' target=_blank>{{ auth_uri }}</a>
+             to authenticate.
+             Then <a href="{{ url_for('auth_response') }}">proceed</a>.
+         </p>
+         {% else %}
+         <a href='{{ auth_uri }}' class="signin-button">Sign In</a>
+         {% endif %}
+     </div>
+ </body>
+ </html>
+ 
+
